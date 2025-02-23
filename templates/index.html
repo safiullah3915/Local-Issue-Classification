@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Local Issues Classification System{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <header>
+        <h2 class="text-center">Welcome to Local Issues Classification and Resolution System</h2>
+    </header>
+    <main class="mt-4">
+        <h4 class="text-center">Get Started</h4>
+        <div class="d-flex justify-content-center mt-5">
+            <a href="{{ url_for('login') }}" class="btn btn-primary mx-2">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-success mx-2">Sign Up</a>
+        </div>
+    </main>
+    <footer class="mt-5 text-center">
+        <p>&copy; 2025 Local Issues Classification System. All rights reserved.</p>
+    </footer>
+</div>
+{% endblock %}

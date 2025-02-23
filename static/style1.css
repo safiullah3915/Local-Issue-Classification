@@ -1,0 +1,68 @@
+/* General Body Style */
+body {
+    background-color: #1a3b56; /* Dark blue background */
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Header Section */
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Menu styling */
+.nav-pills .nav-link {
+    background-color: #2f4f70; /* Dark blue background for menu items */
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #000; /* Black background for the active link */
+    border-bottom: 4px solid #ff6600; /* Orange underline for active item */
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #3e1616; /* Darker maroon on hover */
+}
+
+/* Track Status Section */
+#trackStatusContent h2, #reportIssueContent h2 {
+    font-size: 2rem;
+    color: white;
+}
+
+#trackStatusContent label, #reportIssueContent label {
+    font-size: 1.1rem;
+}
+
+#trackStatusContent input[type="text"], #reportIssueContent textarea {
+    margin-top: 10px;
+    padding: 10px;
+    width: 40%;
+    background-color: #d1d8e2;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ed0d0d; /* Darker maroon on hover */
+}
+
+/* Footer */
+footer {
+    font-size: 1rem;
+}

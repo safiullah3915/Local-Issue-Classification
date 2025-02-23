@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Report Issue - Local Issues Classification System{% endblock %}
+
+{% block content %}
+<header class="bg-primary py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-white">Local Issues Classification and Resolution System</h1>
+        <span class="text-white">Welcome, <strong id="username"></strong></span>
+        <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('track_status') }}">Track Status</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Report Issue</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container mt-5" id="reportIssueContent">
+    <h2>Report Issue</h2>
+    <hr>
+    <form id="reportIssueForm">
+        <div class="mb-3">
+            <label for="issueDescription" class="form-label">Description</label>
+            <textarea id="issueDescription" class="form-control" rows="4" placeholder="Describe the issue" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Submit Issue</button>
+    </form>
+
+    <!-- 🔹 Table for displaying submitted issues -->
+    <div class="mt-5">
+        <h3>Your Submitted Issues</h3>
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Report ID</th>
+                    <th>Description</th>
+                    <th>Department</th> <!-- Added department column -->
+                </tr>
+            </thead>
+            <tbody id="issuesTableBody">
+                <!-- Issues will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="bg-primary text-white text-center py-3 mt-5">
+    <p>&copy; 2025 Local Issues Classification System</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You are not logged in. Redirecting to login page.");
+            window.location.href = "{{ url_for('login') }}";
+            return;
+        }
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            document.getElementById("username").textContent = payload.email;
+        } catch (error) {
+            console.error("Invalid token:", error);
+            alert("Invalid session. Please log in again.");
+            localStorage.removeItem("token");
+            window.location.href = "{{ url_for('login') }}";
+        }
+
+        fetchUserIssues();
+    });
+
+    async function fetchUserIssues() {
+        const token = localStorage.getItem("token");
+
+        try {
+            const response = await fetch("{{ url_for('issues.get_user_issues') }}", {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                const issuesTableBody = document.getElementById("issuesTableBody");
+                issuesTableBody.innerHTML = "";  
+                data.issues.forEach(issue => {
+                    const row = `<tr>
+                        <td>${issue.id}</td>
+                        <td>${issue.description}</td>
+                        <td>${issue.department || 'Pending'}</td> <!-- Updated to include department -->
+                    </tr>`;
+                    issuesTableBody.innerHTML += row;
+                });
+            } else {
+                console.error("Error fetching issues:", data.error);
+            }
+        } catch (error) {
+            console.error("Error fetching user issues:", error);
+        }
+    }
+
+    document.getElementById("reportIssueForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const issueDescription = document.getElementById("issueDescription").value.trim();
+        if (!issueDescription) {
+            alert("Please fill out the description!");
+            return;
+        }
+
+        const token = localStorage.getItem("token");
+
+        try {
+            const response = await fetch("{{ url_for('issues.report_issue') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                },
+                body: JSON.stringify({ description: issueDescription })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Issue reported successfully!");
+                document.getElementById("reportIssueForm").reset();
+                fetchUserIssues();
+            } else {
+                alert(data.error || "Failed to report issue. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error reporting issue:", error);
+            alert("An error occurred. Please check your connection.");
+        }
+    });
+
+    function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "{{ url_for('login') }}";
+    }
+</script>
+{% endblock %}

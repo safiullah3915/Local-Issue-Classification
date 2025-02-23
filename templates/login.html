@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Local Issues Classification System{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <header>
+        <h2 class="text-center">Local Issues Classification and Resolution System</h2>
+    </header>
+    <main>
+        <h4 class="mt-4 text-center">Log In</h4>
+        <form id="login-form">
+            
+            <div class="form-group mb-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label for="user-type">Select User Type:</label>
+                <select id="user-type" class="form-control" required>
+                    <option value="simple">Simple User</option>
+                    <option value="super">Super User</option>
+                </select>
+            </div>
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100">Log In</button>
+        </form>
+        <footer class="mt-3 text-center">
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Create Account</a></p>
+        </footer>
+    </main>
+</div>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+    
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const userType = document.getElementById('user-type').value; 
+    
+        try {
+            const response = await fetch("{{ url_for('auth.login') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password, user_type: userType })
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("user_id", data.user_id);  
+                localStorage.setItem("user_email", data.user_email); 
+    
+               
+                const usernameElement = document.getElementById("username");
+                if (usernameElement) {
+                    usernameElement.textContent = data.user_email;
+                }
+    
+                console.log("User ID:", data.user_id); 
+    
+                
+                if (data.user_type === "simple") {
+                    window.location.href = "{{ url_for('report_issue') }}";
+                } else if (data.user_type === "super") {
+                    window.location.href = "{{ url_for('model_selection') }}";
+                } else {
+                    alert("Unknown user type. Please contact support.");
+                }
+            } else {
+                alert(data.error || "Login failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred. Please check your connection.");
+        }
+    });
+    
+    
+</script>
+{% endblock %}

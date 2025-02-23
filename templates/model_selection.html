@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Model Selection - Local Issues Classification System{% endblock %}
+
+{% block content %}
+<header class="bg-primary py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-white">Local Issues Classification and Resolution System</h1>
+        <span class="text-white">Welcome, <strong id="username"></strong></span>
+        <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Model Selection</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center">Choose the Model</h2>
+    <hr>
+    <div class="d-grid gap-3 mt-4">
+        <a href="{{ url_for('train_test_model', model='kmeans') }}" class="btn btn-primary">K-Means</a>
+        <a href="{{ url_for('train_test_model', model='naive_bayes') }}" class="btn btn-primary">Naive Bayes Classifier</a>
+        <a href="{{ url_for('train_test_model', model='decision_tree') }}" class="btn btn-primary">Decision Tree Classifier</a>
+    </div>
+</div>
+
+<footer class="bg-primary text-white text-center py-3 mt-5">
+    <p>&copy; 2025 Local Issues Classification System</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You are not logged in. Redirecting to login page.");
+            window.location.href = "{{ url_for('login') }}";
+            return;
+        }
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            document.getElementById("username").textContent = payload.email;
+        } catch (error) {
+            console.error("Invalid token:", error);
+            alert("Invalid session. Please log in again.");
+            localStorage.removeItem("token");
+            window.location.href = "{{ url_for('login') }}";
+        }
+    });
+
+    function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "{{ url_for('login') }}";
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+/* General Body Style */
+body {
+    background-color: #1a3b56; /* Dark blue background */
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Container Style */
+.container {
+    max-width: 600px;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #2f4f70; /* Darker blue for form */
+    border-radius: 8px;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Login/Sign Up Heading Background */
+h4 {
+    background-color: #000; /* Black background for headings */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Form label styling */
+label {
+    font-size: 1.1rem;
+}
+
+/* Input fields styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #d1d8e2;
+    color: #333;
+}
+
+/* Button styling */
+button, .btn {
+    background-color: #000; /* Black background for buttons */
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Adjust padding to make the button size fit the text */
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Make the button block-level */
+    margin: 20px auto; /* Center the button with auto margins */
+}
+
+/* Button hover effect */
+button:hover, .btn:hover {
+    background-color: #f50606; /* Darker maroon on hover */
+}
+
+/* Link text styling */
+a {
+    color: #eff2f7ec;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #3708f4;
+}
+
+/* Footer Link Style */
+footer {
+    text-align: center;
+    margin-top: 30px;
+}

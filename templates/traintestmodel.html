@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Train or Test Model - Local Issues Classification System{% endblock %}
+
+{% block content %}
+<header class="bg-primary py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-white">Local Issues Classification and Resolution System</h1>
+        <span class="text-white">Welcome, <strong id="username"></strong></span>
+        <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<!-- Model Training and Testing Section -->
+<div class="container mt-5">
+    <h2 class="text-center">Train or Test the Model</h2>
+    <hr>
+    <h4 class="text-center">Selected Model: <span id="modelName"></span></h4>
+
+    <!-- Train Model Section -->
+    <div id="train-section" class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <div class="card text-center">
+                <div class="card-header bg-primary text-white">
+                    Train the Model
+                </div>
+                <div class="card-body">
+                    <p>Upload your training dataset (.csv) to train the model.</p>
+                    <form id="train-form" enctype="multipart/form-data">
+                        <input type="file" class="form-control mb-3" id="train-file" accept=".csv" required>
+                        <button type="submit" class="btn btn-success">Upload and Train</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Model Section (Initially Hidden) -->
+    <div id="test-section" class="row mt-4" style="display: none;">
+        <div class="col-md-8 offset-md-2">
+            <div class="card text-center">
+                <div class="card-header bg-secondary text-white">
+                    Test the Model
+                </div>
+                <div class="card-body">
+                    <p>Upload your testing dataset (.csv) to test the model.</p>
+                    <form id="test-form" enctype="multipart/form-data">
+                        <input type="file" class="form-control mb-3" id="test-file" accept=".csv" required>
+                        <button type="submit" class="btn btn-warning">Upload and Test</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-primary text-white text-center py-3 mt-5">
+    <p>&copy; 2025 Local Issues Classification System</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You are not logged in. Redirecting to login page.");
+            window.location.href = "{{ url_for('login') }}";
+            return;
+        }
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            document.getElementById("username").textContent = payload.email;
+        } catch (error) {
+            console.error("Invalid token:", error);
+            alert("Invalid session. Please log in again.");
+            localStorage.removeItem("token");
+            window.location.href = "{{ url_for('login') }}";
+        }
+
+        // Get model name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const modelName = urlParams.get("model") || "Unknown Model";
+        document.getElementById("modelName").textContent = modelName;
+    });
+
+    document.getElementById("train-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const trainFile = document.getElementById("train-file").files[0];
+
+        if (!trainFile) {
+            alert("Please select a training file.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", trainFile);
+
+        try {
+            const response = await fetch("{{ url_for('models.train_model') }}", {
+                method: "POST",
+                headers: { "Authorization": "Bearer " + localStorage.getItem("token") },
+                body: formData
+            });
+
+            const data = await response.json();
+            if (response) {
+                setTimeout(() => {
+                    alert("Model trained successfully!");
+                    document.getElementById("train-section").style.display = "none";
+                    document.getElementById("test-section").style.display = "block";
+                }, 3000);
+            } else {
+                alert(data.error || "Failed to train the model. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error training model:", error);
+            alert("An error occurred. Please check your connection.");
+        }
+    });
+
+    document.getElementById("test-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const testFile = document.getElementById("test-file").files[0];
+        const modelName = document.getElementById("modelName").textContent;
+
+        if (!testFile) {
+            alert("Please select a testing file.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", testFile);
+        formData.append("model", modelName);
+
+        try {
+            const response = await fetch("{{ url_for('models.test_model') }}", {  
+                method: "POST",
+                headers: { "Authorization": "Bearer " + localStorage.getItem("token") },
+                body: formData
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert("Model tested successfully! See results in the console.");
+                console.log("Test Results:", data);
+            } else {
+                alert(data.error || "Failed to test the model. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error testing model:", error);
+            alert("An error occurred. Please check your connection.");
+        }
+    });
+
+    function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "{{ url_for('login') }}";
+    }
+</script>
+{% endblock %}
