@@ -5,7 +5,7 @@ from email.message import EmailMessage
 from groq import Groq
 from models.issue import Issue
 from models import db
-from config import Config  
+from routes.cache.config import Config  
 
 groq_api_key = Config.GROQ_API_KEY  
 
@@ -19,9 +19,8 @@ client = None
 if groq_api_key:
     try:
         client = Groq(api_key=groq_api_key)
-        print("✅ Groq API initialized successfully.")
     except Exception as e:
-        print(f"❌ Error initializing Groq API: {e}")
+        print(f"{e}")
 
 department_mapping = {
     "police department": "Police Department",
@@ -46,7 +45,6 @@ def closest_match(department):
 def verify_groq_api():
     """Checks if the Groq API key is valid."""
     if not client:
-        print("❌ Invalid Groq API Key. Ensure it is correctly set in `config.py`.")
         return False
     return True
 
@@ -70,7 +68,7 @@ def get_department_routing(user_query):
         return closest_match(department)
 
     except Exception as e:
-        return f"❌ Error calling LLM: {str(e)}"
+        return f"{str(e)}"
 
 def send_email(issue):
     """Sends an email with issue details to the assigned department using Mailtrap SMTP."""

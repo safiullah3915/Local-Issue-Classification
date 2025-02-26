@@ -15,13 +15,12 @@ def report_issue():
 
     user_id = get_jwt_identity()
 
-    # Create a new issue with default values for new columns
     new_issue = Issue(
         description=data["description"],
         user_id=user_id,
-        status="Pending",  # Default status
-        department=None,  # Initially, no department assigned
-        sent_to_department=False  # Not yet sent
+        status="Pending",  
+        department=None,  
+        sent_to_department=False  
     )
 
     db.session.add(new_issue)

@@ -1,0 +1,1 @@
+{"dataset_path": "uploads\\training_dataset1.xlsx", "model": "kmeans", "hyperparameters": {"n_clusters": "5"}}

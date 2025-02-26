@@ -22,6 +22,37 @@
     </ul>
 </div>
 
+<!-- ✅ ✅ ✅ MERGED MODEL SELECTION FEATURE -->
+<div class="container mt-5">
+    <h2 class="text-center">Select Model for Categorizing Reports</h2>
+    <hr>
+
+    <!-- 🔹 Model Selection Dropdown -->
+    <form id="model-selection-form">
+        <label for="modelDropdown" class="form-label"><strong>Select ML Model:</strong></label>
+        <select id="modelDropdown" class="form-select mb-3" required>
+            <option value="">-- Select Model --</option>
+        </select>
+        <button type="submit" class="btn btn-primary w-100">Save Model Selection</button>
+    </form>
+
+    <!-- 🔹 Table Showing Current Model Selection -->
+    <div class="mt-5">
+        <h3>Current Model in Use</h3>
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Model Name</th>
+                </tr>
+            </thead>
+            <tbody id="selectedModelTableBody">
+                <!-- Selected model will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <div class="container mt-5" id="reportIssueContent">
     <h2>Report Issue</h2>
     <hr>
@@ -41,7 +72,7 @@
                 <tr>
                     <th>Report ID</th>
                     <th>Description</th>
-                    <th>Department</th> <!-- Added department column -->
+                    <th>Department</th>
                 </tr>
             </thead>
             <tbody id="issuesTableBody">
@@ -50,6 +81,7 @@
         </table>
     </div>
 </div>
+
 
 <footer class="bg-primary text-white text-center py-3 mt-5">
     <p>&copy; 2025 Local Issues Classification System</p>
@@ -74,6 +106,8 @@
         }
 
         fetchUserIssues();
+        fetchAvailableModels();
+        fetchSelectedModel();
     });
 
     async function fetchUserIssues() {
@@ -95,7 +129,7 @@
                     const row = `<tr>
                         <td>${issue.id}</td>
                         <td>${issue.description}</td>
-                        <td>${issue.department || 'Pending'}</td> <!-- Updated to include department -->
+                        <td>${issue.department || 'Pending'}</td>
                     </tr>`;
                     issuesTableBody.innerHTML += row;
                 });
@@ -143,9 +177,85 @@
         }
     });
 
+    // ✅ Fetch Available Models
+    function fetchAvailableModels() {
+        const token = localStorage.getItem("token");
+
+        fetch("{{ url_for('models.get_available_models') }}", {
+            method: "GET",
+            headers: { "Authorization": "Bearer " + token }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.models) {
+                const dropdown = document.getElementById("modelDropdown");
+                dropdown.innerHTML = `<option value="">-- Select Model --</option>`; // Reset dropdown
+                data.models.forEach(model => {
+                    let option = document.createElement("option");
+                    option.value = model;
+                    option.textContent = model;
+                    dropdown.appendChild(option);
+                });
+            }
+        })
+        .catch(error => console.error("Error fetching models:", error));
+    }
+
+    // ✅ Fetch Selected Model
+    function fetchSelectedModel() {
+        const token = localStorage.getItem("token");
+
+        fetch("{{ url_for('models.get_selected_model') }}", {
+            method: "GET",
+            headers: { "Authorization": "Bearer " + token }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const selectedModelTable = document.getElementById("selectedModelTableBody");
+            if (data.model_name) {
+                selectedModelTable.innerHTML = `<tr><td>${data.model_name}</td></tr>`;
+            } else {
+                selectedModelTable.innerHTML = `<tr><td>No model selected</td></tr>`;
+            }
+        })
+        .catch(error => console.error("Error fetching selected model:", error));
+    }
+
+    // ✅ Handle Model Selection
+    document.getElementById("model-selection-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const selectedModel = document.getElementById("modelDropdown").value;
+        if (!selectedModel) {
+            alert("Please select a model.");
+            return;
+        }
+
+        const token = localStorage.getItem("token");
+
+        fetch("{{ url_for('models.save_model_selection') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: JSON.stringify({ model_name: selectedModel })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert("Model selection updated!");
+                fetchSelectedModel();
+            } else {
+                alert("Failed to save model selection.");
+            }
+        })
+        .catch(error => console.error("Error saving model:", error));
+    });
+
     function logout() {
         localStorage.removeItem("token");
         window.location.href = "{{ url_for('login') }}";
     }
 </script>
+
 {% endblock %}

@@ -4,22 +4,19 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from config import Config
+from routes.cache.config import Config
 from models import db
 from models.issue import Issue
-from model import process_unsent_issues  # Import function to categorize and send reports
+from routes.cache.email import process_unsent_issues  
 
-# Initialize Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Enable CORS
-CORS(app)
+CORS(app, supports_credentials=True) 
 
-# Initialize database
+
 db.init_app(app)
 
-# Initialize JWT
 jwt = JWTManager(app)
 
 @app.route("/")
@@ -50,7 +47,6 @@ def track_status():
 def train_test_model():
     return render_template("traintestmodel.html")
 
-# Import and register blueprints
 from routes.auth import auth_blueprint
 from routes.issues import issues_blueprint
 from routes.models import models_blueprint
@@ -59,18 +55,16 @@ app.register_blueprint(auth_blueprint, url_prefix="/api/auth")
 app.register_blueprint(issues_blueprint, url_prefix="/api/issues")
 app.register_blueprint(models_blueprint, url_prefix="/api/models")
 
-# Background Task for Processing Unsent Reports
 def run_background_task():
     """ Periodically checks for new reports and categorizes them """
     while True:
         with app.app_context():
             process_unsent_issues()
-        time.sleep(50)  # Run every 5 minutes (300 seconds)
+        time.sleep(50)  
 
-# Start background task in a separate thread
 threading.Thread(target=run_background_task, daemon=True).start()
 
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all()  # Ensure database tables are created
+        db.create_all()  
     app.run(debug=True)

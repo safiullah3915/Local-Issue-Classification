@@ -1,82 +1,101 @@
-Issue ID,Description,PCA1,PCA2,KMeans_Cluster,DBSCAN_Cluster,Hierarchical_Cluster
-1,"In Karachi, bike theft is becoming a major problem, especially in areas like Korangi. Residents report that bikes are stolen daily, and despite complaints, the police are unable to do much. It's now common for people to install additional security measures to protect their bikes.",7.1312478161217445,-4.511470246418819,3,-1,4
-2,"In Lahore, theft of mobile phones in crowded areas like Baghbanpura has been increasing. Thieves often snatch phones from people's hands in broad daylight, and the police seem to be doing very little to stop it.",2.664044970550597,-7.511774321193565,1,-1,4
-3,"Rawalpindi is facing a surge in house break-ins, particularly in residential neighborhoods. Thieves have been known to break into homes even during the day, and families are installing expensive security systems to feel safe.",1.5275748211558564,-4.2458472026292124,1,-1,0
-4,"In Faisalabad, there’s a growing concern about ATM thefts. Criminals are targeting individuals withdrawing money late at night, and many people now avoid using ATMs after dark due to fear of being robbed.",27.502629090671732,13.695710647101729,2,-1,3
-5,"Sialkot’s local markets are plagued by shoplifting. Business owners are struggling with increasing thefts and are frustrated by the lack of visible police presence, making it difficult to prevent losses.",1.2283476171159429,-1.5129418784582804,1,-1,4
-6,"In Islamabad, carjacking incidents have become a problem. Robbers frequently target vehicles in quiet areas, especially at night, and many drivers are now reluctant to travel after dark due to safety concerns.",13.161591464745475,2.700462758581942,1,-1,0
-7,"Peshawar’s busy markets have become hotspots for pickpocketing. With large crowds, it’s easy for thieves to swipe phones, wallets, and other valuables without anyone noticing.",0.806771928757223,-2.58435458799626,1,-1,4
-8,"Quetta faces a serious issue of street thefts, especially in crowded areas like the main bazaar. Residents often report losing their belongings in busy markets, and the police seem to be overwhelmed and unable to help.",3.102099485253768,-6.113877703931938,1,-1,4
-9,"In Multan, theft of household items from homes has been increasing. Thieves often break into homes during the night, and the local police force is understaffed, making it difficult to address the problem effectively.",2.9123630976140453,-3.516844221546924,1,-1,0
-10,"In Sukkur, thefts in public places are becoming common. People complain about losing their bags or wallets in crowded spots, and there is a general sense of insecurity among residents.",2.6225049036925343,-0.6690253823276624,1,-1,4
-11,"In Karachi, many schools face issues with inadequate infrastructure. Classrooms are overcrowded, and the lack of basic facilities such as clean drinking water and working toilets is a constant challenge for students and staff.",-3.705046337908806,4.224900202603257,1,-1,0
-12,"In Lahore, the education system is struggling due to a shortage of teachers and outdated textbooks. Students in many public schools are not receiving the quality of education they deserve, which is affecting their future prospects.",-3.4712186908420004,3.641005932067784,1,-1,0
-13,"In Rawalpindi, many students attend schools that lack proper facilities, including science labs and libraries. The education quality is compromised, and parents are frustrated with the state of public schools.",-3.2561437556367903,2.3417796228897827,1,-1,0
-14,"In Faisalabad, several government schools are overcrowded, with too many students in each classroom. This makes it difficult for teachers to provide individual attention, and students are not receiving the best education possible.",-2.6865357522578517,5.0557881696737255,1,-1,0
-15,"Sialkot’s schools face challenges with outdated curricula and a lack of resources. The teaching staff is underpaid and overworked, which impacts the quality of education students are receiving.",-3.5506610923825592,3.7917387316680693,1,-1,0
-16,"In Islamabad, many students struggle to access quality education because of the rising cost of private schooling. Public schools are underfunded, and the overall education system seems to be deteriorating.",-2.8085254782075615,3.3377278312717973,1,-1,0
-17,"In Multan, the education system is facing a shortage of qualified teachers in subjects like science and mathematics. This is causing a gap in the quality of education, and students are not getting the skills they need to succeed.",-3.7839056357012324,1.9197612679035803,1,-1,0
-18,"In Peshawar, many students have to travel long distances to attend schools, as there are not enough schools in rural areas. This creates an additional burden for families, and the education system is not catering to the needs of these communities.",-2.746443212519992,2.4844996453950388,1,-1,0
-19,"In Quetta, the lack of educational facilities in rural areas means that many children cannot access basic education. This is a huge issue that is affecting the future of many children in the region.",-2.134983090225775,-0.16184037190560982,1,-1,0
-20,"In Sukkur, students often have to study in classrooms with broken windows and poor ventilation. This not only affects their health but also makes it hard to concentrate and learn effectively.",-2.816459658775543,3.861659905810509,1,-1,0
-21,"In Karachi, the roads are in poor condition, with numerous potholes and cracks making it unsafe for drivers. Traffic jams are common, and accidents happen regularly due to the damaged roads.",0.9298342628967006,-1.856544576102145,1,-1,0
-22,"In Lahore, many main roads are riddled with potholes and uneven surfaces, causing accidents and delays in traffic. The authorities have been slow to repair the roads, leaving commuters frustrated.",0.06255383806924919,-3.9456930109565223,1,-1,0
-23,"In Rawalpindi, traffic jams and poorly maintained roads are a common issue. The lack of proper road infrastructure leads to long travel times, and the roads often worsen during the rainy season, causing more accidents.",-0.6096458326481011,-1.483417890376331,1,-1,0
-24,"In Faisalabad, roads are often blocked by construction work that is left incomplete for weeks, causing massive traffic jams and delays. The lack of proper traffic management worsens the situation.",-0.4802323909245481,-2.3752252934694877,1,-1,0
-25,"In Sialkot, traffic congestion is a daily issue due to narrow streets and poorly planned road networks. The situation is further exacerbated by the lack of proper traffic signals and street lighting in some areas.",-0.0024224485134401634,-4.794483090429163,1,-1,0
-26,"In Islamabad, the condition of roads in certain sectors is deteriorating. Potholes and cracks are common, and the local authorities have been slow to fix them, resulting in accidents and vehicle damage.",-0.14883921146065776,-4.4314463374734645,1,-1,0
-27,"In Multan, many roads are not properly paved, and potholes are a frequent issue. During rainy weather, these roads become even more hazardous, causing accidents and delays in daily commutes.",0.15561894765614018,-1.773563347198976,1,-1,0
-28,"In Peshawar, the road conditions are extremely poor, with many streets having large potholes and no proper streetlights. This makes driving dangerous, and many areas remain inaccessible during rainy weather.",-0.17611204788990675,-3.0244462519480972,1,-1,0
-29,"In Quetta, there is a lack of proper road infrastructure, and many roads are not paved. This is particularly a problem in rural areas, where transportation becomes a challenge due to the poor condition of roads.",-0.5667543042251146,-0.7359892020073686,1,-1,0
-30,"In Sukkur, the roads are often clogged with traffic, and the lack of proper infrastructure makes commuting difficult. The authorities seem to be doing little to address the issue, and it continues to worsen.",-0.5750999600466304,-2.339228039562348,3,-1,0
-31,"In Karachi, garbage is often left unattended for days in residential areas, causing foul smells and attracting pests. The city’s waste management system is overwhelmed and unable to deal with the increasing amount of trash.",-0.6303125797525662,-4.961851726191153,0,-1,1
-32,"In Lahore, many neighborhoods face issues with garbage collection. Trash piles up on the streets for days, and the local authorities fail to provide timely pickups, leading to unsanitary conditions.",-0.35474337576627524,-3.1804481952507517,1,-1,1
-33,"In Rawalpindi, garbage collection is sporadic, and many areas are filled with overflowing trash bins. The lack of proper waste management has led to poor hygiene and increased health risks in the community.",-0.3300005106853324,-4.353925434758718,1,-1,1
-34,"In Faisalabad, cleanliness is a significant problem. Residents often complain about the accumulation of trash on streets and the absence of regular garbage collection. The lack of an efficient waste management system is eviden",0.04852487864858854,-3.6237545502505597,3,-1,1
-35,"In Sialkot, the streets are frequently littered with garbage, especially in busy markets. Local authorities seem indifferent to the problem, and residents are left to deal with the unpleasant conditions.",1.5069832382164194,-4.682822858652753,0,-1,1
-36,"In Islamabad, trash piles up on streets in certain neighborhoods due to irregular garbage collection. The authorities have been slow to address the issue, leading to growing frustration among residents.",1.5247020092684236,-4.584491587571338,3,-1,1
-37,"In Multan, the lack of a proper waste management system means that garbage is often dumped on the streets. People have to deal with unpleasant smells and the presence of pests in residential areas.",-0.6914890279859035,-3.803601457274128,0,-1,1
-38,"In Peshawar, the cleanliness situation in busy areas like Saddar is getting worse. People throw trash everywhere, and the local authorities are not doing enough to clean the streets or provide proper waste disposal options.",-0.38023605427769397,-3.54840388769597,1,-1,1
-39,"In Sukkur, residents complain about the state of cleanliness in their local neighborhoods. Trash can be seen on every street corner, and there’s no proper waste management system in place. The lack of cleanliness is affecting the quality of life.",-1.1159530697585833,-2.5569565698188423,1,-1,1
-40,"In Quetta, streets are filled with garbage, especially in areas like Hazara Town. There’s no regular collection service, and the situation is further complicated by the lack of proper disposal bins in the area.",0.35204164277124983,-5.720012633408914,3,-1,1
-41,"In Karachi, hospitals are overcrowded, and the shortage of medical staff is putting extra pressure on the system. Emergency rooms are full, and patients often have to wait for hours before receiving treatment.",-3.5157175976494077,4.560439943298858,1,-1,0
-42,"In Lahore, the public healthcare system is failing due to inadequate facilities and the high cost of medical treatments. People can’t afford private hospitals, and government hospitals are overcrowded with long waiting times.",-2.8334166662855527,4.614148146197686,1,-1,0
-43,"Rawalpindi is facing a shortage of essential medicines in local clinics and pharmacies. Many people are turning to the black market to buy medicines, which are often counterfeit or expired.",-0.9024242674181153,1.7521969813115246,1,-1,0
-44,"In Quetta, healthcare facilities are scarce, and people often have to travel to Karachi or Lahore for specialized treatment. This is especially difficult for low-income families, who can’t afford the travel expenses.",-1.7871745229206608,2.1883147305901844,1,-1,0
-45,"In Multan, healthcare services are insufficient for the growing population. Rural areas are particularly affected, as many residents don’t have access to proper healthcare or even basic medical supplies.",-0.696770917397459,2.2694396972410797,1,-1,0
-46,"In Peshawar, the lack of specialized healthcare facilities is pushing people to seek treatment in other cities. This is especially problematic for those who cannot afford the travel and treatment costs.",-2.3686966612508384,2.790670188583163,1,-1,0
-47,"In Faisalabad, local health clinics are often understaffed and lack the equipment necessary to provide quality care. The lack of resources and medical professionals makes it hard for people to get proper treatment.",-1.8193167194115154,3.2850653274752672,1,-1,0
-48,"In Islamabad, many people are facing difficulty in accessing affordable healthcare services. Public hospitals are overburdened, and the cost of private healthcare is too high for many residents.",-1.4593670805728347,3.7101368621750255,1,-1,0
-49,"In Sialkot, there’s a shortage of doctors in local healthcare centers. People often have to wait days to get an appointment, and in some cases, they are forced to go to larger cities for medical treatment.",-2.731590844018448,3.5076778153707298,1,-1,0
-50,"In Sukkur, hospitals and clinics are poorly equipped, and many patients complain about the lack of attention from medical staff. This is particularly problematic in rural areas, where healthcare access is even more limited.",-1.975487102601184,2.2949903440333204,1,-1,0
-51,"In Karachi, Dengue fever outbreaks occur every year, with many residents falling ill. Despite efforts to control the disease, there is still a lack of proper sanitation and awareness about prevention methods.",1.6953747511507866,1.243347033018779,3,-1,1
-52,"In Lahore, there has been a rise in cases of malaria due to poor sanitation and standing water in various neighborhoods. The healthcare system is overwhelmed, and the spread of disease is affecting many families.",-0.5375851666085245,-0.8684086105427354,3,-1,0
-53,"In Rawalpindi, the spread of tuberculosis is becoming a growing concern. Many people do not have access to proper treatment, and there is little awareness about the disease in poorer neighborhoods.",1.10974436428115,0.024884096951410365,3,-1,0
-54,"In Faisalabad, the spread of the seasonal flu has been rampant, with many residents seeking treatment at overcrowded clinics. Hospitals are struggling to provide care to all those affected.",0.6710225600443983,2.315577543966682,1,-1,0
-55,"In Sialkot, residents are concerned about the increasing cases of Hepatitis due to unclean water sources. There’s a lack of awareness about the disease and how it spreads, which is making the situation worse.",0.4598491756920469,-0.42685416102299295,3,-1,1
-56,"In Islamabad, cases of viral infections are rising rapidly, and local hospitals are struggling to keep up with the number of patients. There are long waiting times for treatment, and some people are forced to seek private care.",-2.826502114246256,6.0866929366242095,3,-1,0
-56,"In Islamabad, cases of viral infections are rising rapidly, and local hospitals are struggling to keep up with the number of patients. There are long waiting times for treatment, and some people are forced to seek private care.",-2.826502114246256,6.0866929366242095,3,-1,0
-57,"In Multan, there is a serious issue with waterborne diseases. The spread of cholera and diarrhea is causing concern, and many families do not have access to clean drinking water, which is contributing to the issue.",-0.4398004074281583,-0.37216527314763354,3,-1,0
-58,"In Peshawar, there are frequent outbreaks of viral infections like hepatitis and chickenpox. The public health system is stretched thin, and many people are not getting the care they need.",-2.1187466929058165,3.060701981991281,3,-1,0
-59,"In Quetta, the spread of diseases like Tuberculosis and Cholera is becoming a major concern due to poor sanitation and limited healthcare facilities. The government is failing to take adequate preventive measures.",0.7246732384481059,0.11402795637647888,3,-1,0
-60,"In Sukkur, there are regular reports of outbreaks of malaria and dengue. The lack of proper mosquito control measures and sanitation is contributing to the growing number of cases in the area.",-0.2158555104953585,0.0919472793666914,3,-1,0
-61,"In Karachi, road safety is a major concern, with several accidents reported due to the lack of proper traffic signals and speed bumps in busy areas like Korangi. Pedestrians are often at risk, and drivers frequently ignore traffic laws.",5.330146994771189,-2.6905048627677406,1,-1,0
-62,"In Lahore, many public parks are poorly maintained, with broken benches and litter scattered around. The lack of proper maintenance means that these parks are no longer safe or enjoyable for families to visit.",-1.4167433133585947,2.8237078439506247,1,-1,0
-63,"In Rawalpindi, power outages have become a frequent issue. Local neighborhoods often experience blackouts for several hours at a time, which causes inconvenience for residents who rely on electricity for work and basic needs.",-0.37608363875783835,2.797175353501698,1,-1,0
-64,"In Faisalabad, local markets are often overcrowded, and vendors set up stalls on the streets, blocking pedestrian traffic. The lack of proper market planning leads to dangerous situations, especially during peak shopping hours.",1.4573799372478642,-2.34566622033131,3,-1,1
-65,"In Sialkot, many residential areas experience severe water shortages, particularly during the summer. Long queues for water tankers are common, and families struggle to meet their daily water needs.",-0.24830284922734752,-0.3823960962377313,1,-1,0
-66,"In Islamabad, stray dogs have become a growing problem in certain neighborhoods. Residents are afraid to walk outside due to the threat of attacks, and the municipal authorities have been slow to address the issue.",2.344822907734685,-4.754581098924875,3,-1,0
-67,"In Multan, local roads are becoming increasingly unsafe due to speeding vehicles. Many accidents occur on busy roads, and there’s a lack of speed enforcement, causing fear among residents traveling these routes.",3.9563652653207058,0.22485605148517138,1,-1,0
-68,"In Peshawar, many government buildings, such as schools and hospitals, suffer from poor infrastructure. Leaking roofs, broken doors, and dilapidated classrooms make it difficult for students and staff to work in a safe environment.",-4.205683959285173,7.252932958950198,1,-1,0
-69,"In Quetta, many rural areas lack proper healthcare facilities. Villagers often have to travel long distances to access medical treatment, which is not only time-consuming but also expensive for families living in poverty.",-2.7086004696984376,2.7132371931338772,1,-1,0
-70,"In Sukkur, there’s a noticeable shortage of public transport options. People have to rely on private cars or risky modes of transport, making commuting difficult and costly for those without vehicles.",-0.5314757433249633,3.446171353135725,3,-1,0
-71,"In Karachi, the issue of child labor is widespread in many neighborhoods. Children can be seen working in shops, factories, and on the streets, depriving them of an education and a chance to have a better future.",-3.1958773480861145,-2.432854660345052,1,-1,0
-72,"In Lahore, air pollution is a growing concern, particularly in industrial areas. The burning of fossil fuels and the high number of vehicles on the road contribute to severe smog, which is affecting the health of residents.",0.586229431556678,-0.22955032823581967,3,-1,0
-73,"In Rawalpindi, the city’s sewage system is outdated, causing wastewater to overflow in many areas. This leads to unsanitary conditions, especially after heavy rains, when roads become flooded with contaminated water.",1.9718755604468925,-1.8643944141442066,1,-1,0
-74,"In Faisalabad, many public schools lack access to basic learning resources, such as computers and projectors. Students are forced to rely on outdated textbooks, and the lack of modern facilities hinders their ability to learn.",-3.5196489103254716,7.205105798563175,1,-1,0
-75,"In Sialkot, the rise in food contamination is a serious issue. Many local food markets have poor hygiene standards, and there have been reports of foodborne illnesses affecting residents due to unsanitary conditions.",0.5921525237752886,-2.7863170299185533,3,-1,0
-76,"In Islamabad, the issue of water contamination is affecting several neighborhoods. People have reported cases of dirty and contaminated water, which has led to an increase in waterborne diseases in the area.",-0.3857962878159556,-1.4750126266298902,3,-1,0
-77,"In Multan, the quality of education in public schools is declining due to a shortage of qualified teachers. Many schools are unable to fill teaching vacancies, which is affecting the learning outcomes of students.",-2.804445824721063,3.0831869253998416,3,-1,0
-78,"In Peshawar, the rise in drug use among youth is a concerning issue. Many young people are turning to narcotics as a coping mechanism, and the local authorities are struggling to combat this growing problem.",-0.14285163944197582,0.29032219532809395,1,-1,0
-79,"In Quetta, the problem of illegal mining is rampant. Local authorities have not taken strong action against illegal miners, and the environmental damage caused by unregulated mining activities is worsening the region's conditions.",0.389021467269721,-10.355892435694361,4,-1,2
-80,"In Sukkur, the lack of public libraries makes it difficult for students and residents to access books and study materials. This is limiting their access to knowledge and hindering educational progress in the city.",-2.915864303053004,2.7001974851360235,1,-1,0
+ID,Description,PCA1,PCA2,Cluster
+1,"In Karachi, bike theft is rising, and police response is slow despite repeated complaints.",-0.12720108193256793,-0.09724027397356683,3
+2,"Street crimes in Lahore are increasing, and people feel unsafe walking at night.",-0.09720901082910853,-0.1426255142730632,4
+3,"Robberies in Islamabad markets are becoming frequent, causing fear among shopkeepers.",-0.07255184311908061,-0.06069671995385922,2
+4,"Mobile snatching incidents are reported daily, yet no action is taken.",-0.07795880002419991,-0.05215039277011032,3
+5,"The police are not patrolling the streets at night, leading to an increase in theft cases.",-0.12005829300661305,-0.2214616866187824,2
+6,"Several murder cases remain unsolved, and families are demanding justice.",-0.09381653945323186,-0.12815764136564975,2
+7,"Drug dealers openly operate in residential areas, but police seem unaware.",0.06895848793965255,-0.13529584019206722,4
+8,The police take hours to respond to emergency calls in case of an attack.,-0.10483534955422308,-0.029802269077602018,2
+9,A recent kidnapping case in Multan remains unsolved despite available CCTV footage.,-0.0358188101920096,-0.07198105637691724,2
+10,"There is a lack of female police officers in the city, making it hard for women to report crimes.",-0.06470184769911817,0.35562699498581574,1
+11,"Gangs are openly involved in extortion, but local police do not take any strict action.",0.12130031510403431,-0.1789422909734829,0
+12,People are afraid to report crimes because they believe police do not take them seriously.,0.11554663243930838,-0.10968351823613018,2
+13,The traffic police are failing to control reckless driving and road accidents.,-0.09629044905137152,-0.11465328781197039,2
+14,"Cases of harassment are increasing, and police stations fail to register complaints.",-0.17633962862862673,-0.13620467302113987,2
+15,"There are reports of police brutality in several areas, causing public outrage.",-0.09137670533035058,-0.09727884502681614,2
+16,Protests are being held against police inaction in domestic violence cases.,-0.10785997348556108,-0.13708698617582651,2
+17,The police are accepting bribes to let criminals go free.,-0.10024135341951777,-0.11077660973559655,2
+18,Several people are falsely accused of crimes due to corrupt police practices.,-0.07574907163692302,-0.009347718595230961,2
+19,"There is an increase in missing persons cases, but investigations remain slow.",-0.156244908753371,-0.0774871279572656,2
+20,"Despite surveillance cameras, crime rates are not reducing, indicating poor police efficiency.",0.0033249287050218334,-0.17506328777251018,2
+21,"Government hospitals lack basic medicines, forcing patients to buy expensive drugs.",0.01790616412864403,0.14543815569091867,1
+22,"Several hospitals have unhygienic conditions, increasing the risk of infections.",0.10218979009685575,-0.026916365326202892,2
+23,"Rural clinics do not have enough doctors, making healthcare inaccessible.",0.38791793030412847,-0.04235712439794636,0
+24,Patients wait for hours to receive emergency treatment due to a shortage of staff.,-0.038443212944495764,0.1632648825988847,2
+25,"Many government hospitals have broken medical equipment, delaying treatment.",0.15699270741261614,0.08169064961416245,1
+26,"The vaccination drive is slow, causing concern about disease outbreaks.",-0.082490696241344,-0.04335994443919329,3
+27,"Ambulance services are limited, resulting in preventable deaths.",-0.06316205719710385,-0.08699205562085247,2
+28,"Hospital management is corrupt, and medicines meant for free distribution are being sold.",-0.09881745265064183,-0.041967971256182526,3
+29,"Nurses are overworked and underpaid, leading to a decline in healthcare quality.",-0.06276240299979431,-0.0675992369643591,2
+30,Many private hospitals are overcharging patients without any regulations.,0.014733038712172018,-0.018528175395509928,4
+31,"Medical waste is being dumped in open areas, creating health hazards.",-0.04834148423484368,-0.03361114081301619,3
+32,"There is a lack of mental health facilities, leaving patients without proper care.",-0.09275080581601561,0.281804827100095,1
+33,"The number of dengue fever cases is increasing, and hospitals are running out of space.",-0.13932708158714285,-0.035775716359302004,2
+34,"Several areas do not have clean drinking water, leading to waterborne diseases.",0.41233800247915103,-0.07476847356449438,0
+35,Children in remote villages are not receiving proper vaccinations.,0.010853012649880147,-0.06314406983160116,1
+36,A recent food poisoning outbreak exposed the poor hygiene standards in food chains.,-0.04432960393371007,-0.05512942678469407,2
+37,Pharmaceutical companies are increasing drug prices without government regulation.,-0.049323694970521866,-0.052904129110872285,4
+38,The shortage of female doctors in rural areas makes healthcare inaccessible for women.,0.025353954428074057,0.16656960057989853,2
+39,Patients with serious conditions are forced to wait months for surgeries.,-0.03041612001888804,0.012487253710348655,1
+40,"Government hospitals do not have air conditioning in extreme weather, making it unbearable for patients.",0.3598600135945864,0.08986142227355555,1
+41,"Many government schools lack proper furniture, making it hard for students to study.",0.11119152288888214,0.5191487500840922,1
+42,"Teachers in rural schools are often absent, affecting the quality of education.",-0.10945312877677613,0.0806422011521082,2
+43,"Schools in flood-affected areas have not been repaired, disrupting education.",0.13725817333219584,-0.0137512001596996,1
+44,"The examination system is outdated, and students rely on rote learning.",-0.10987162763809466,0.04406863471779794,1
+45,There are not enough science laboratories in public schools.,-0.030218169505843825,-0.05943569294784764,1
+46,Students from low-income families cannot afford books due to high costs.,-0.010896486337859059,0.08120963239999723,0
+47,Private schools keep increasing fees without providing better facilities.,-0.028296992141359764,0.03238753056684174,4
+48,There is a shortage of qualified teachers in government schools.,-0.11247979175113695,0.24808108159234069,1
+49,The literacy rate is dropping due to poor quality education in rural areas.,-0.057094112063596374,0.08506353410503927,2
+50,"Schools lack proper security, increasing risks for students.",0.05458890285811522,0.4194487081443605,1
+51,The outdated syllabus does not prepare students for modern jobs.,0.06137841743129156,0.04952199347628848,1
+52,Several schools lack clean drinking water and proper toilets.,0.0663465498985346,0.17813550932123123,1
+53,"Many schools do not have a playground, limiting sports activities for students.",0.4050414947210703,0.10173458925829568,1
+54,Female students in conservative areas drop out due to a lack of transport facilities.,-0.03948493113760151,0.25804499379440676,1
+55,"Cheating in exams is widespread, affecting the credibility of results.",-0.11003500273956765,0.018663624128191218,2
+56,There is no proper career counseling in public schools.,-0.1204578977235595,0.16677796494053795,1
+57,A lack of IT education leaves students unprepared for technological advancements.,-0.009949078121651864,0.3155022548393311,1
+58,Many students cannot continue higher education due to financial constraints.,0.02800849705484799,0.14276241264099968,1
+59,Students in rural areas face difficulty in accessing online education.,0.004056490935625663,0.09273583463524805,1
+60,"There are reports of harassment cases in schools, and authorities fail to take action.",-0.1833825336509405,-0.08163506969249053,2
+61,"The main roads in the city are full of potholes, causing accidents.",-0.10917817620162679,-0.007660668544625615,2
+62,"Streetlights in residential areas do not work, increasing the risk of crime.",0.2953901431840276,-0.13594534992707474,0
+63,"Drainage systems are poorly maintained, leading to urban flooding.",-0.038204248563516216,-0.06747279912901291,2
+64,"Water supply is inconsistent, leaving people struggling for basic needs.",0.004713755610114649,0.04647531860023015,3
+65,Gas shortages in winter create problems for households.,-0.013215322060748826,0.024387433636245088,1
+66,"Electricity outages occur frequently, disrupting daily life.",-0.012614332124951267,-0.048330399062019455,2
+67,"There is no proper waste disposal system, leading to garbage pile-ups.",-0.09321597029123145,0.14293407997759358,3
+68,Poor urban planning has led to frequent traffic congestion.,-0.05696633066014825,-0.025923312205072508,2
+69,"Construction projects remain incomplete for years, causing inconvenience.",-0.028129036415655687,0.015059145711149448,1
+70,"Trees are being cut down without replantation, affecting the environment.",-0.10866175698909533,-0.08693909875825298,4
+71,Open manholes in streets pose a danger to pedestrians and vehicles.,-0.085795788610396,-0.052876609249052006,3
+72,"Public parks are not maintained, reducing recreational spaces.",-0.001495833813834224,-0.14521585412359198,0
+73,Encroachments on roadsides create traffic bottlenecks.,-0.04214509292430862,-0.022552465656189288,2
+74,Several bridges are in poor condition and may collapse without repair.,-0.11476582035469686,-0.1431472643833875,4
+75,"There are frequent sewage overflows, making streets unhygienic.",-0.07393338776794178,-0.048343028588884236,3
+76,"Bus stops do not have shelters, leaving passengers exposed to extreme weather.",0.35539074234728346,-0.06985673351893985,0
+77,Public toilets are either non-existent or in terrible condition.,-0.094656451653409,-0.12374288313523232,2
+78,The lack of footpaths forces pedestrians to walk on busy roads.,-0.08426638431098864,0.17669566601085893,2
+79,Many residential areas still do not have proper road connectivity.,0.473849361112081,-0.07113605579972604,0
+80,Government projects take years to complete due to inefficiency.,-0.03360358568265766,0.08403409592697886,2
+81,"Garbage collection is irregular, making streets dirty.",-0.04302343491424369,0.012163570400089061,3
+82,"Stray dogs are a serious problem, and the authorities are doing nothing.",-0.11271962234149138,-0.1318388627130746,2
+83,"The city does not have enough public dustbins, leading to littering.",0.19371677680492175,-0.04908102483622773,2
+84,Open sewage drains create a foul smell and health hazards.,-0.07343484492239212,-0.06402347808933667,2
+85,Water contamination is causing diseases in urban areas.,0.0019890530027505213,-0.03473812153669296,3
+86,"Vendors illegally occupy footpaths, blocking pedestrian movement.",-0.025569260106126885,-0.021964170456459733,4
+87,Street vendors bribe officials to operate without regulations.,-0.024501752691548574,-0.04334923380643167,4
+88,Poor sanitation leads to an increase in mosquitoes and dengue cases.,-0.14884469960172322,-0.15302074126373796,2
+89,Noise pollution from illegal constructions disturbs residential areas.,0.10837550338817326,-0.08144948867356826,0
+90,The lack of proper parking spaces creates congestion in markets.,-0.07645934537981569,0.22584058874967647,1
+91,Municipal workers do not collect trash from many neighborhoods.,0.27414173406386305,-0.09345182608156523,0
+92,Poor drainage after rain leaves roads waterlogged for days.,-0.030614350424144277,0.03320302678243219,1
+93,"Many areas do not have street name signs, confusing visitors.",0.4680642730721308,-0.12193128947172942,0
+94,Water leakage from pipelines wastes thousands of liters daily.,-0.005694803592773655,-0.012052706780342958,0
+95,Unauthorized billboards make the city look cluttered.,-0.03436410884020082,-0.006877204271798611,2
+96,Public buses are in terrible condition and often break down.,-0.14010947895800066,-0.16637574579139336,2
+97,Some areas do not receive gas supply despite having connections.,0.28318562484797855,-0.12835540803239795,0
+98,Street vendors leave behind a mess after closing their stalls.,-0.013947128074334075,-0.04269030869676803,4
+99,The public transport system is outdated and inefficient.,-0.13746839869892946,-0.009198143207329387,3
+100,"Local markets lack proper cleanliness, leading to pest problems.",0.0036747827212817163,0.20188584621572925,1
