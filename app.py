@@ -7,7 +7,7 @@ from flask_jwt_extended import JWTManager
 from routes.cache.config import Config
 from models import db
 from models.issue import Issue
-from routes.cache.email import process_unsent_issues  
+from routes.cache.email import process_unsent_issues  , process_overdue_issues
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -60,6 +60,7 @@ def run_background_task():
     while True:
         with app.app_context():
             process_unsent_issues()
+            process_overdue_issues()
         time.sleep(50)  
 
 threading.Thread(target=run_background_task, daemon=True).start()
