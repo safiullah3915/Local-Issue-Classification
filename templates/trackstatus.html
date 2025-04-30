@@ -98,12 +98,12 @@
                 const statusTableBody = document.getElementById("statusTableBody");
                 statusTableBody.innerHTML = `
                     <tr>
-                        <td>${data.issue_id}</td>
-                        <td>${data.description}</td>
-                        <td>${data.status}</td>
-                        <td>${data.department || "Not Assigned"}</td>
-                        <td>${data.sent_to_department === true ? "✅ Yes" : "❌ No"}</td>
-                    </tr>
+    <td class="text-white">${data.issue_id}</td>
+    <td class="text-white">${data.description}</td>
+    <td class="text-white">${data.status}</td>
+    <td class="text-white">${data.department || "Not Assigned"}</td>
+    <td class="text-white">${data.sent_to_department === true ? "✅ Yes" : "❌ No"}</td>
+  </tr>
                 `;
                 document.getElementById("statusTableContainer").style.display = "block";
             } else {
